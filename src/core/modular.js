@@ -17,7 +17,7 @@ export default class Modular {
         };
 
         this.modularDir = modularDir;
-        this.modularPath = join(modularDir, name);
+        this.modularPath = join(modularDir, name, options.dir.modularSub || '');
     }
 
     async ready() {
