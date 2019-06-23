@@ -28,7 +28,7 @@ export default class Store {
             options: {
                 dir: `${options.dir.modular}/${modular.name}/${options.dir.store}`,
                 namespace: options.namespace || options.name,
-                ignorePrefix: options.ignorePrefix
+                files: modular.getFiles(options.dir.store, options.supportedExtensions).map(f => f.replace(options.dir.store + '/', ''))
             }
         });
     }

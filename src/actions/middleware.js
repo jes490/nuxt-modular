@@ -22,7 +22,7 @@ export default class Middleware {
             options: {
                 dir: `${options.dir.modular}/${modular.name}/${options.dir.middleware}`,
                 namespace: options.namespace,
-                ignorePrefix: options.ignorePrefix
+                files: modular.getFiles(options.dir.store, options.supportedExtensions).map(f => f.replace(options.dir.store + '/', ''))
             }
         });
     }

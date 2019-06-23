@@ -1,12 +1,4 @@
-const regexFiles = /^\.\/(?!<%= options.ignorePrefix %>)[^.]+\.(<%= extensions %>)$/u;
-const files = require.context('@/<%= options.dir %>', true, regexFiles);
-const filenames = files.keys();
-
-function getModule(filename) {
-    const file = files(filename);
-
-    return file.default || file;
-}
+const filenames = '<%= options.files %>'.split(',');
 
 export default ({ store }) => {
     for (const filename of filenames) {
@@ -16,6 +8,6 @@ export default ({ store }) => {
             name = '';
         }
 
-        store.registerModule('<%= options.namespace %>' + (name ? `/${name}` : ''), getModule(filename));
+        store.registerModule('<%= options.namespace %>' + (name ? `/${name}` : ''), require('@/<%= options.dir %>/' + filename));
     }
 };
