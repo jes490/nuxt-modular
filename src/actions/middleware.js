@@ -21,7 +21,8 @@ export default class Middleware {
             fileName: `${modular.name}.middleware.js`,
             options: {
                 dir: `${options.dir.modular}/${modular.name}/${options.dir.middleware}`,
-                namespace: options.namespace
+                namespace: options.namespace,
+                ignorePrefix: options.ignorePrefix
             }
         });
     }

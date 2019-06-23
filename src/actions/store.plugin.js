@@ -1,4 +1,4 @@
-const regexFiles = /^\.\/(?!<%= ignorePrefix %>)[^.]+\.(<%= extensions %>)$/u;
+const regexFiles = /^\.\/(?!<%= options.ignorePrefix %>)[^.]+\.(<%= extensions %>)$/u;
 const files = require.context('@/<%= options.dir %>', true, regexFiles);
 const filenames = files.keys();
 

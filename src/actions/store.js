@@ -27,7 +27,8 @@ export default class Store {
             fileName: `${modular.name}.store.js`,
             options: {
                 dir: `${options.dir.modular}/${modular.name}/${options.dir.store}`,
-                namespace: options.namespace || options.name
+                namespace: options.namespace || options.name,
+                ignorePrefix: options.ignorePrefix
             }
         });
     }
