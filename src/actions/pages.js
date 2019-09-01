@@ -45,7 +45,7 @@ export default class Pages {
                 }
 
                 if (r.children) {
-                    r.children = parseRoutes(r.children);
+                    r.children.forEach(r => r.name = `${options.prefix}/${r.name}`);
                 }
             });
 
